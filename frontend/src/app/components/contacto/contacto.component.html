@@ -1,0 +1,46 @@
+<app-principal></app-principal>
+<div class="container">
+ 
+
+      <div class="card">
+        <div class="card-content">
+          <form #contactoForm="ngForm" (ngSubmit)="addContacto(contactoForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="contactoService.selectedContacto._id">
+            <div class="row">
+
+
+              <div class="input-field col-s12">
+                <input type="text" name="nombre" #name="ngModel" [(ngModel)]="contactoService.selectedContacto.nombre"
+                  placeholder="Ingresa el nombre">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="email" #name="ngModel" [(ngModel)]="contactoService.selectedContacto.email"
+                  placeholder="Ingresa el nombre">
+              </div>
+             
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" type="text" name="infadi" #name="ngModel"
+                    [(ngModel)]="contactoService.selectedContacto.infadi" placeholder="Ingresa el contenido"></textarea>
+
+                </div>
+              </div>
+
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(contactoForm)">Clean</button>
+                  <button class="btn right">Save</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+
+
+<app-footer></app-footer>
